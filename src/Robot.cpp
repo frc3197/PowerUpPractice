@@ -3,8 +3,6 @@
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
 
-//comment
-//comment2
 
 //TestComment
 
