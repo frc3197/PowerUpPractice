@@ -7,7 +7,14 @@
 
 #pragma once
 
-class OI {
+#include <Commands/Command.h>
+
+class MyAutoCommand : public frc::Command {
 public:
-	OI();
+	MyAutoCommand();
+	void Initialize() override;
+	void Execute() override;
+	bool IsFinished() override;
+	void End() override;
+	void Interrupted() override;
 };

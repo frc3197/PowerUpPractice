@@ -5,27 +5,27 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "ExampleCommand.h"
+#include "MyAutoCommand.h"
 
-ExampleCommand::ExampleCommand() {
+MyAutoCommand::MyAutoCommand() {
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(&Robot::chassis);
 }
 
 // Called just before this Command runs the first time
-void ExampleCommand::Initialize() {}
+void MyAutoCommand::Initialize() {}
 
 // Called repeatedly when this Command is scheduled to run
-void ExampleCommand::Execute() {}
+void MyAutoCommand::Execute() {}
 
 // Make this return true when this Command no longer needs to run execute()
-bool ExampleCommand::IsFinished() {
+bool MyAutoCommand::IsFinished() {
 	return false;
 }
 
 // Called once after isFinished returns true
-void ExampleCommand::End() {}
+void MyAutoCommand::End() {}
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void ExampleCommand::Interrupted() {}
+void MyAutoCommand::Interrupted() {}
