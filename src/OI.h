@@ -24,6 +24,7 @@ private:
 
 	Joystick stick;
 
+
 	JoystickButton p1A; //A
 	JoystickButton p1B; //B
 	JoystickButton p1X; //X
