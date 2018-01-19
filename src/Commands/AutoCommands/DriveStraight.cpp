@@ -15,13 +15,14 @@ void DriveStraight::Drive(float s) {
 
 void DriveStraight::Initialize() {
 	timer.Reset();
+
 	timer.Start();
 	state = 0;
 	finished = false;
 }
 
 void DriveStraight::Execute() {
-	switch (state) {
+	switch (state)  {
 	case 0:
 		if (!timer.HasPeriodPassed(MAX_TIME))
 			Drive(SPEED);
