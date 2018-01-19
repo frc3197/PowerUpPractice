@@ -15,8 +15,8 @@ void TankControl::Initialize() {
 void TankControl::Execute() {
 	float left = oi->getDriveLeft();
 	float right = oi->getDriveRight();
-	SmartDashboard::PutNumber("left",left);
-	SmartDashboard::PutNumber("right",right);
+	SmartDashboard::PutNumber("left", left);
+	SmartDashboard::PutNumber("right", right);
 
 	robotDrive->driveBot(left, right);
 }
