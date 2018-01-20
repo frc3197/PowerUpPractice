@@ -3,9 +3,8 @@
 
 #include <memory>
 #include <string>
-
 #include <Commands/Command.h>
-
+#include "WPILib.h"
 #include "OI.h"
 #include "Subsystems/RobotDriveWithJoystick.h"
 
@@ -21,9 +20,8 @@ public:
 	CommandBase() = default;
 	static void init();
 
-	// Create a single static instance of all of your subsystems
 	static std::unique_ptr<OI> oi;
 	static RobotDriveWithJoystick *robotDrive;
 };
 
-#endif  // COMMAND_BASE_H
+#endif

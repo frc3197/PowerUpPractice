@@ -21,12 +21,12 @@ private:
 	std::unique_ptr<frc::Command> autoCommand;
 	frc::SendableChooser<frc::Command*> chooser;
 	MyAutoCommand defaultAuto;
-	DriveStraight straightAuto;
+//	DriveStraight straightAuto;
 
 public:
 	void RobotInit() override {
 		chooser.AddDefault("Default Auto", &defaultAuto);
-		chooser.AddObject("Drive Straight", &straightAuto);
+//		chooser.AddObject("Drive Straight", &straightAuto);
 		frc::SmartDashboard::PutData("Auto Modes", &chooser);
 	}
 

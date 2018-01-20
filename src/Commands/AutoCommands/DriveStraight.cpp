@@ -22,26 +22,28 @@ void DriveStraight::Initialize() {
 }
 
 void DriveStraight::Execute() {
-	switch (state)  {
-	case 0:
-		if (!timer.HasPeriodPassed(MAX_TIME))
-			Drive(SPEED);
-		else
-			state++;
-		break;
-
-	case 1:
-
-		finished = true;
-		timer.Stop();
-		Drive(0);
-
-		break;
-
-	default:
-		finished = true;
-		break;
-	}
+	SmartDashboard::PutNumber("works", 1);
+//	switch (state)  {
+//	case 0:
+//		if (!timer.HasPeriodPassed(MAX_TIME))
+//			Drive(SPEED);
+//		robotDrive->driveBot(SPEED, SPEED);
+//		else
+//			state++;
+//		break;
+//
+//	case 1:
+//
+//		finished = true;
+//		timer.Stop();
+//		Drive(0);
+//
+//		break;
+//
+//	default:
+//		finished = true;
+//		break;
+//	}
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -51,7 +53,7 @@ bool DriveStraight::IsFinished() {
 
 // Called once after isFinished returns true
 void DriveStraight::End() {
-	Drive(0);
+//	Drive(0);
 }
 
 // Called when another command which requires one or more of the same
