@@ -4,32 +4,14 @@
 
 #include "../RobotMap.h"
 
-#include "WPILib.h"
-
-#include "ctre/Phoenix.h"
-
-#define SPEED_MULTIPLIER .75
-
 RobotDriveWithJoystick::RobotDriveWithJoystick() :
-		Subsystem("RobotDriveWithJoystick")
+		Subsystem("RobotDriveWithJoystick"),
+			can1(1), can2(2), can3(3), can4(4),
+			rDrive(can1, can2, can3, can4)
 {
-	WPI_TalonSRX *frontRight = new WPI_TalonSRX(1);
-	WPI_TalonSRX *rearRight = new WPI_TalonSRX(2);
-	WPI_TalonSRX *frontLeft = new WPI_TalonSRX(3);
-	WPI_TalonSRX *rearLeft = new WPI_TalonSRX(4);
-
-	rDrive = new DifferentialDrive(*frontLeft, *frontRight);
-	rearLeft->Follow(*frontLeft);
-	rearRight->Follow(*frontRight);
-	rDrive->SetSafetyEnabled(false);
-	frontRight->SetInverted(true);
-	rearRight->SetInverted(true);
-	frontLeft->SetInverted(true);
-	rearLeft->SetInverted(false);
-
+	rDrive.SetSafetyEnabled(false);
 
 }
-
 
 void RobotDriveWithJoystick::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
@@ -38,5 +20,9 @@ void RobotDriveWithJoystick::InitDefaultCommand() {
 }
 
 void RobotDriveWithJoystick::driveBot(float left, float right){
-	rDrive->TankDrive(left * SPEED_MULTIPLIER, right * SPEED_MULTIPLIER);
+	rDrive.TankDrive(left, right, false);
 }
+
+// Put methods for controlling this subsystem
+// here. Call these from Commands.
+

@@ -3,15 +3,21 @@
 
 #include <Commands/Subsystem.h>
 #include "WPILib.h"
-#include "C:\Users\Hexhounds\wpilib\user\cpp\include\ctre\phoenix\MotorControl\CAN\WPI_TalonSRX.h"
+#include <C:\Users\Hexhounds\wpilib\user\cpp\include\CANTalon.h>
 
 class RobotDriveWithJoystick: public Subsystem {
 public:
 	RobotDriveWithJoystick();
-	void InitDefaultCommand();
+	void InitDefaultCommand() override;
 	void driveBot(float left, float right);
 private:
-	frc::DifferentialDrive *rDrive;
+	// It's desirable that everything possible under private except
+	// for methods that implement subsystem capabilities
+	RobotDrive rDrive;
+	CANTalon can1;
+	CANTalon can2;
+	CANTalon can3;
+	CANTalon can4;
 };
 
 #endif //ROBOT_DRIVE_JOYSTICK_H

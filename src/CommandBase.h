@@ -3,10 +3,12 @@
 
 #include <memory>
 #include <string>
+
 #include <Commands/Command.h>
-#include "WPILib.h"
+
 #include "OI.h"
 #include "Subsystems/RobotDriveWithJoystick.h"
+#include "Subsystems/ExampleSubsystem.h"
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -20,8 +22,10 @@ public:
 	CommandBase() = default;
 	static void init();
 
+	// Create a single static instance of all of your subsystems
+	static std::unique_ptr<ExampleSubsystem> exampleSubsystem;
 	static std::unique_ptr<OI> oi;
 	static RobotDriveWithJoystick *robotDrive;
 };
 
-#endif
+#endif  // COMMAND_BASE_H

@@ -6,8 +6,8 @@
 class OI {
 public:
 	OI();
-	float getDriveRight();
 	float getDriveLeft();
+	float getDriveRight();
 
 private:
 	static const int JOYSTICK = 0;
@@ -23,7 +23,6 @@ private:
 	static const int BUTTON10 = 10;
 
 	Joystick stick;
-
 
 	JoystickButton p1A; //A
 	JoystickButton p1B; //B

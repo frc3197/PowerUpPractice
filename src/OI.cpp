@@ -1,7 +1,9 @@
 #include "OI.h"
+
 #include <WPILib.h>
 
 OI::OI():
+	// Process operator interface input here.
 	stick(0),
 	p1A(&stick, BUTTON1),//A
 	p1B(&stick, BUTTON2),//B
@@ -17,18 +19,18 @@ OI::OI():
 
 }
 
-float OI::getDriveRight(){
-	float raw = -stick.GetRawAxis(5);
-	if(raw < .115 && raw > -.115){
-			raw = 0;
-		}
-		return raw;
-}
-
 float OI::getDriveLeft(){
-	float raw = -stick.GetRawAxis(1);
+	float raw = stick.GetRawAxis(1);
 	if(raw < .115 && raw > -.115){
 		raw = 0;
 	}
 	return raw;
+}
+
+float OI::getDriveRight(){
+	float raw = stick.GetRawAxis(5);
+	if(raw < .115 && raw > -.115){
+			raw = 0;
+		}
+		return raw;
 }

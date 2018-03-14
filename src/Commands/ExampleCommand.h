@@ -1,15 +1,9 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
+#ifndef EXAMPLE_COMMAND_H
+#define EXAMPLE_COMMAND_H
 
-#pragma once
+#include "../CommandBase.h"
 
-#include <Commands/Command.h>
-
-class ExampleCommand : public frc::Command {
+class ExampleCommand: public CommandBase {
 public:
 	ExampleCommand();
 	void Initialize() override;
@@ -18,3 +12,5 @@ public:
 	void End() override;
 	void Interrupted() override;
 };
+
+#endif  // EXAMPLE_COMMAND_H

@@ -15,10 +15,7 @@ void TankControl::Initialize() {
 void TankControl::Execute() {
 	float left = oi->getDriveLeft();
 	float right = oi->getDriveRight();
-	SmartDashboard::PutNumber("left", left);
-	SmartDashboard::PutNumber("right", right);
-
-	robotDrive->driveBot(left, right);
+	robotDrive->driveBot(left,right);
 }
 
 // Make this return true when this Command no longer needs to run execute()
